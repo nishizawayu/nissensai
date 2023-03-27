@@ -1,0 +1,51 @@
+/*レスポンシブ用*/
+$breakpoint: (
+  sp: 'screen and (max-width: 1024px)',
+  pc: 'screen and (min-width: 1025px)'
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+   @content;
+  }
+}
+
+@mixin color($bg,$txt){
+  background-color: $bg;
+  color: $txt;
+}
+
+*{
+  font-family: 'Noto Sans JP', sans-serif;;
+}
+
+a{
+  text-decoration: none;
+}
+
+/**/
+@include mq(sp){
+  
+  h2{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+}
+
+@include mq(pc){
+  h2{
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
